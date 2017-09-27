@@ -42,6 +42,7 @@
     "webpack-manifest-plugin": "1.2.1",
     "whatwg-fetch": "2.0.3"
   },
+  "devDependencies": {},
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
