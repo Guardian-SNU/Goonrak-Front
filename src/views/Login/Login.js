@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
+
+import { loginRequest } from '../../api/auth';
 import './Login.css';
-import { loginRequest } from '../../api/login';
 
 class Login extends Component {
   constructor() {
     super();
     this.state = {
-      redirect: false
+      logined: false
     };
     this.handleLogin = this.handleLogin.bind(this);
   }
@@ -18,13 +19,16 @@ class Login extends Component {
   }
 
   render() {
-    if(this.state.redirect) return (<Redirect to='/'/>);
+    if(this.state.logined) return (<Redirect to='/'/>);
     return (
-      <form onSubmit={this.handleLogin}>
-        ID <input type='text' name='id'/><br/>
-        PW <input type='password' name='password'/><br/>
-        <input type='submit' value='Log In'/>
-      </form>
+      <div id='login-wrapper'>
+        <form onSubmit={this.handleLogin}>
+          ID <input type='text' name='username'/><br/>
+          PW <input type='password' name='password'/><br/>
+          <input type='submit' value='Log In'/>
+        </form>
+        <Link to='/register' type='button'>Register</Link>
+      </div>
     );
   }
 }
