@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Home from './views/Home';
 import Login from './views/Login';
 import Register from './views/Register';
+import Board from './views/Board';
 import './main.css';
 
 // <Header /> should go below <BrowserRouter>
@@ -14,6 +15,7 @@ ReactDOM.render(
       <Route exact path='/' component={Home}/>
       <Route path='/login' component={Login}/>
       <Route path='/register' component={Register}/>
+      <Route path='/board' component={Board}/>
     </Switch>
   </BrowserRouter>
   ,document.getElementById('root')
